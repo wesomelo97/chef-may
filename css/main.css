@@ -1,0 +1,75 @@
+/* CONFIGURANDO O HEADER */
+header {
+    width: 100%;
+    padding: 28px 8%;
+}
+
+#navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  /*Ele distribui os itens de forma que o primeiro fique grudado na borda esquerda e o último na borda direita, enquanto os itens restantes se espalham igualmente no espaço disponível entre eles.*/
+}
+
+#nav_logo {
+    font-size: 24px;
+    color: #e9a209;
+}
+
+#nav_list {
+    display: flex;
+    list-style: none;
+    gap: 48px; /*O gap é usado para definir o espaço entre os itens dentro de um container flex ou grid. Ele elimina a necessidade de usar margens individuais nos itens, deixando o código mais limpo.*/
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #1d1d1dad;
+    font-weight: 600;
+}
+
+.nav-item.active a {
+    color: #1d1d1d !important;
+    border-bottom: 3px solid #ffe100 !important; 
+}
+
+/* CONFIGURANDO O HEADER MOBILE */
+#mobile_btn {
+    display: none;
+}
+
+#mobile_menu {
+    display: none;
+}
+
+@media screen and (max-width: 1170px) {
+    #nav_list,
+    #navbar .btn-default {
+        display: none;
+    }
+    #mobile_btn {
+        display: block;
+        border: none;
+        background-color: transparent;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    #mobile_menu.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #mobile_nav_list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin: 12px 0px;
+    }
+
+    #mobile_nav_list .nav-item {
+        list-style: none;
+        text-align: center;
+    }
+}
